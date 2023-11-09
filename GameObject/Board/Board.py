@@ -1,9 +1,9 @@
 class Board:
     def __init__(self):
-        self.board = []
+        self.board_field = []
 
-    def addLeft(self, card):
-        self.board.insert(0, card)
+    def add_left(self, card):
+        self.board_field.insert(0, card)
 
-    def addRight(self, card):
-        self.board.append(card)
+    def add_right(self, card):
+        self.board_field.append(card)
