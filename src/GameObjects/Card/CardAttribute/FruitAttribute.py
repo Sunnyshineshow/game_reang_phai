@@ -1,5 +1,5 @@
 from enum import Enum
 
 
-class FoodAttribute(Enum):
+class FruitAttribute(Enum):
     sth = 0

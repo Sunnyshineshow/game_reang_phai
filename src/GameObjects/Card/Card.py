@@ -6,3 +6,6 @@ class Card:
 
         # Is combo calculated for the card?
         self.is_in_combo = False
+
+    def view_card(self):
+        return "Card Type:", self.type, ", Card Attribute:", self.attribute
