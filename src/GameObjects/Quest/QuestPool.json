@@ -1,0 +1,15 @@
+
+{
+    "quest": [
+        {
+            "name": "some name idk",
+            "questcode" : "Fo0;Dr0;Sw0;Fr0",
+            "range": "adjacent"
+        },
+        {
+            "name": "some name idk 2 ",
+            "questcode" : "Fo0;Fo0;Fo0",
+            "range": "adjacent"
+        }
+    ]
+}
