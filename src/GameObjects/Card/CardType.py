@@ -4,6 +4,6 @@ from enum import Enum
 class CardType(Enum):
     NONE = 0
     FOOD = 1
-    DRINK = 2
-    SWEET = 3
+    SWEET = 2
+    DRINK = 3
     FRUIT = 4
