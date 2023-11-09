@@ -37,13 +37,22 @@ class Quest:
         for q in quest_code_overall:
             card_type = ""
             card_attrib = ""
+            card_attrib_pool = []
             if q[0:2] == "Fo":
                 card_type = CardType.FOOD
+                for attribute in FoodAttribute:
+                    card_attribute_pool.append(attribute)
             elif q[0:2] == "Dr":
                 card_type = CardType.DRINK
+                for attribute in DrinkAttribute:
+                    card_attribute_pool.append(attribute)
             elif q[0:2] == "Fr":
                 card_type = CardType.FRUIT
+                for attribute in FruitAttribute:
+                    card_attribute_pool.append(attribute)
             elif q[0:2] == "Sw":
                 card_type = CardType.SWEET
+                for attribute in SweetAttribute:
+                    card_attribute_pool.append(attribute)
             else:
                 print("Cannot render quest")
