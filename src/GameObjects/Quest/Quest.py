@@ -30,6 +30,7 @@ class Quest:
     def __init__(self, raw_quest):
         self.name = quest["name"]
         self.range = quest["range"].upper()
+        self.condition = []
 
         # Render Area
         quest_code_overall = quest["questcode"].split(";")
@@ -55,4 +56,24 @@ class Quest:
                 for attribute in SweetAttribute:
                     card_attribute_pool.append(attribute)
             else:
-                print("Cannot render quest")
+                raise TypeError("Cannot render quest" + q["name"])
+
+            attrib_num = int(q[2:])
+
+            for a in card_attrib_pool:
+                if a.value == attrib_num:
+                    card_attrib = a
+                    break
+            else:
+                raise TypeError("Invalid Attribute Number of " + str(attrib_num))
+
+            self.condition.append(Card(card_type, card_attrib))
+
+    def view_quest(self):
+        card_outstr = ""
+        for card in self.condition:
+            card_outstr += card.view_card + ";"
+        return self.name + " " + self.range + "\nCondition:" + card_outstr
+
+    def get_quest(self):
+        return {"name": self.name, "range": self.range, "condition": self.condition}
