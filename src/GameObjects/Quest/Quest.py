@@ -27,10 +27,13 @@ overall - all card in the field
 
 
 class Quest:
-    def __init__(self, raw_quest):
+    def __init__(
+        self, quest, customize=False, name=None, range=None, condition=None, reward=None
+    ):
         self.name = quest["name"]
         self.range = quest["range"].upper()
         self.condition = []
+        self.reward = []
 
         # Render Area
         quest_code_overall = quest["questcode"].split(";")
@@ -38,7 +41,7 @@ class Quest:
         for q in quest_code_overall:
             card_type = ""
             card_attrib = ""
-            card_attrib_pool = []
+            card_attribute_pool = []
             if q[0:2] == "Fo":
                 card_type = CardType.FOOD
                 for attribute in FoodAttribute:
@@ -60,7 +63,7 @@ class Quest:
 
             attrib_num = int(q[2:])
 
-            for a in card_attrib_pool:
+            for a in card_attribute_pool:
                 if a.value == attrib_num:
                     card_attrib = a
                     break
@@ -76,4 +79,9 @@ class Quest:
         return self.name + " " + self.range + "\nCondition:" + card_outstr
 
     def get_quest(self):
-        return {"name": self.name, "range": self.range, "condition": self.condition}
+        return {
+            "name": self.name,
+            "range": self.range,
+            "condition": self.condition,
+            "reward": self.reward,
+        }
