@@ -1,87 +1,101 @@
 {
-    "spriteSheetURL": "./graphics/food_sprite.png",
+    "spriteSheetURL": "./graphics/sweet_sprite.png",
     "size":[128,128],
     "sprites":[
         {
-            "name":"food_maki",
+            "name":"sweet_tanghulu",
             "x":0,
             "y":0,
             "scalefactor":3,
             "colorKey":-1
         },
 	    {
-            "name":"food_omurice",
+            "name":"sweet_biskit",
             "x":128,
             "y":0,
             "scalefactor":3,
             "colorKey":-1
         },
         {
-            "name":"food_spaghetti",
+            "name":"sweet_yamroll",
             "x":256,
             "y":0,
             "scalefactor":3,
             "colorKey":-1
         },
         {
-            "name":"food_fried",
+            "name":"sweet_chocolate",
             "x":384,
             "y":0,
             "scalefactor":3,
             "colorKey":-1
         },
         {
-            "name":"food_takoyaki",
+            "name":"sweet_pudding",
             "x":512,
             "y":0,
             "scalefactor":3,
             "colorKey":-1
         },
         {
-            "name":"food_sandwich",
+            "name":"sweet_shavedice",
             "x":640,
             "y":0,
             "scalefactor":3,
             "colorKey":-1
         },
         {
-            "name":"food_hotdog",
+            "name":"sweet_icecream",
             "x":768,
             "y":0,
             "scalefactor":3,
             "colorKey":-1
         },
         {
-            "name":"food_bao",
+            "name":"sweet_macaron",
             "x":896,
             "y":0,
             "scalefactor":3,
             "colorKey":-1
         },
         {
-            "name":"food_pizza",
+            "name":"sweet_cake",
             "x":0,
             "y":128,
             "scalefactor":3,
             "colorKey":-1
         },
         {
-            "name":"food_hamburger",
+            "name":"sweet_mochi",
             "x":128,
             "y":128,
             "scalefactor":3,
             "colorKey":-1
         },
         {
-            "name":"food_sushi",
+            "name":"sweet_taiyaki",
             "x":256,
             "y":128,
             "scalefactor":3,
             "colorKey":-1
         },
         {
-            "name":"food_ramen",
+            "name":"sweet_cupcake",
             "x":384,
+            "y":128,
+            "scalefactor":3,
+            "colorKey":-1
+        },
+        {
+            "name":"sweet_crape",
+            "x":512,
+            "y":128,
+            "scalefactor":3,
+            "colorKey":-1
+        },
+        {
+            "name":"sweet_donut",
+            "x":640,
             "y":128,
             "scalefactor":3,
             "colorKey":-1
