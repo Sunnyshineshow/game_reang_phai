@@ -5,6 +5,7 @@ from src.GameObjects.Card.CardAttribute.DrinkAttribute import DrinkAttribute
 from src.GameObjects.Card.CardAttribute.FoodAttribute import FoodAttribute
 from src.GameObjects.Card.CardAttribute.SweetAttribute import SweetAttribute
 from src.GameObjects.Card.CardAttribute.FruitAttribute import FruitAttribute
+from src.GameObjects.Card.CardAttribute.AnyAttribute import AnyAttribute
 
 """
 Summary:
@@ -57,6 +58,10 @@ class Quest:
             elif q[0:2] == "Sw":
                 card_type = CardType.SWEET
                 for attribute in SweetAttribute:
+                    card_attribute_pool.append(attribute)
+            elif q[0:2] == "An":
+                card_type = CardType.ANY
+                for attribute in AnyAttribute:
                     card_attribute_pool.append(attribute)
             else:
                 raise TypeError("Cannot render quest" + q["name"])

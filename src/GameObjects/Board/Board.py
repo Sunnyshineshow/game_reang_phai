@@ -32,7 +32,10 @@ class Board:
                 return False
             if direction_from == CheckDirectionFrom.LEFT:
                 for i in range(len(quest_field)):
-                    if self.board_field[i] != quest_field[i]:
+                    if (
+                        self.board_field[i] != quest_field[i]
+                        and quest_field[i].type != CardType.ANY
+                    ):
                         return False
                     if self.board_field[i].is_in_combo:
                         return False
@@ -44,6 +47,7 @@ class Board:
                     if (
                         self.board_field[len(self.board_field) - i - 1]
                         != quest_field[i]
+                        and quest_field[i].type != CardType.ANY
                     ):
                         return False
 
@@ -55,7 +59,10 @@ class Board:
             counted_arr = []
             for i in range(len(quest_field)):
                 for j in range(len(self.board_field)):
-                    if self.board_field[j].type == quest_field[i].type:
+                    if (
+                        self.board_field[j].type == quest_field[i].type
+                        or quest_field[i].type == CardType.ANY
+                    ):
                         if self.board_field[j].is_in_combo:
                             continue
                         elif j in counted_arr:
