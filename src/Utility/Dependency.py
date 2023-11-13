@@ -76,3 +76,5 @@ fruit_image_list = [
     sprite_collection["fruit_apple"].image,
     sprite_collection["fruit_rambutan"].image,
 ]
+
+none_image_list = [sprite_collection["none_none"].image]

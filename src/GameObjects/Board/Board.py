@@ -3,11 +3,23 @@ from src.GameObjects.Card.CardType import CardType
 from src.GameObjects.Card.Card import Card
 from src.GameObjects.Board.CardChecker import check_order
 from src.Utility.CheckDirectionFrom import CheckDirectionFrom
+from src.Utility.constants import *
 
 
 class Board:
     def __init__(self):
+        self.width = 128
+        self.height = 128
+        self.x = WIDTH / 2 - self.width / 2
+        self.y = HEIGHT / 2 - self.height / 2
+        self.dx = 0
+        self.dy = 0
+        self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
+
         self.board_field = [Card(CardType.NONE, NoneAttribute.NONE)]
+
+    def update(self, dt):
+        pass
 
     def add_left(self, card):
         if check_order(self.board_field[0], card):
@@ -93,3 +105,17 @@ class Board:
         else:
             print("Invalid Quest Range")
             return False
+
+    def render(self, screen):
+        center = 0
+        for i in range(len(self.board_field)):
+            if self.board_field[i].type == CardType.NONE:
+                center = i
+                self.board_field[i].render(screen, self.x, self.y)
+                break
+
+        for i in range(center - 1, -1, -1):
+            self.board_field[i].render(screen, (self.x - (center - i) * 128), self.y)
+
+        for i in range(center + 1, len(self.board_field)):
+            self.board_field[i].render(screen, (self.x + (i - center) * 128), self.y)
