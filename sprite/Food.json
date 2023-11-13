@@ -1,0 +1,21 @@
+{
+    "spriteSheetURL": "./graphics/food_sprite.png",
+    "size":[128,128],
+    "sprites":[
+        {
+            "name":"food_maki",
+            "x":0,
+            "y":0,
+            "scalefactor":3,
+            "colorKey":-1
+        },
+	  {
+            "name":"food_omurice",
+            "x":128,
+            "y":0,
+            "scalefactor":3,
+            "colorKey":-1
+        }]
+}
+
+
