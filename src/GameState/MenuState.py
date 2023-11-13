@@ -3,9 +3,9 @@ import pygame, sys
 from src.Utility.constants import *
 
 
-class StartState(BaseState):
+class MenuState(BaseState):
     def __init__(self, state_manager):
-        super(StartState, self).__init__(state_manager)
+        super(MenuState, self).__init__(state_manager)
         # start = 1,       ranking = 2
         self.option = 1
 
@@ -36,8 +36,8 @@ class StartState(BaseState):
                     else:
                         self.option = 1
                     self.menu_change_sound.play()
-                # if event.key == pygame.K_RETURN:
-                #     self.confirm_sound.play()
+                if event.key == pygame.K_RETURN:
+                    self.confirm_sound.play()
 
                 #     if self.option == 1:
                 #         self.state_machine.Change(

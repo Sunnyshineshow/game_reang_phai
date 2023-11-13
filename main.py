@@ -7,7 +7,7 @@ from src.GameObjects.Board.Board import Board
 from src.GameObjects.Hand.Hand import Hand
 from src.GameObjects.Quest.QuestPool import QuestPool
 from src.GameState.StateMachine import StateMachine
-from src.GameState.StartState import StartState
+from src.GameState.MenuState import MenuState
 
 
 pygame.mixer.pre_init(44100, -16, 2, 4096)
@@ -34,7 +34,7 @@ class MainGame:
         self.g_state_manager = StateMachine(self.screen)
         # Import the game state here
         states = {
-            "start": StartState(self.g_state_manager),
+            "menu": MenuState(self.g_state_manager),
         }
         self.g_state_manager.SetStates(states)
 
@@ -56,7 +56,7 @@ class MainGame:
         # self.bg_music.play(-1)
         clock = pygame.time.Clock()
         self.g_state_manager.Change(
-            "start",
+            "menu",
             {},
         )
 
