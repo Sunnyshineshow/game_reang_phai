@@ -12,7 +12,7 @@ class CardDrawer:
     def __init__(self):
         self.card_types = []
         for card_type in CardType:
-            if card_type == CardType.NONE:
+            if card_type == CardType.NONE or card_type == CardType.ANY:
                 continue
             self.card_types.append(card_type)
 
@@ -41,11 +41,12 @@ class CardDrawer:
     def draw(self):
         card_type = random.choice(self.card_types)
 
+        print(card_type)
+
         card_available_attributes = self.available_attribute(card_type)
 
         if card_available_attributes == 0:
-            print("Invalid Card Draw")
-            return "Invalid Card Draw"
+            raise TypeError("Invalid Card Draw")
 
         card_attribute = random.choice(card_available_attributes)
 

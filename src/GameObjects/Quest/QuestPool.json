@@ -4,32 +4,38 @@
         {
             "name": "Any3all",
             "questcode" : "An0;An0;An0",
-            "range": "all"
+            "range": "all",
+            "reward": 3
         },
         {
             "name": "Any2Adjacent",
             "questcode" : "An0;An0",
-            "range": "adjacent"
+            "range": "adjacent",
+            "reward": 2
         },
         {
             "name": "Food2Adjacent",
             "questcode" : "Fo0;Fo0",
-            "range": "adjacent"
+            "range": "adjacent",
+            "reward": 2
         },
         {
             "name": "Drink2Adjacent",
             "questcode" : "Dr0;Dr0",
-            "range": "adjacent"
+            "range": "adjacent",
+            "reward": 2
         },
         {
             "name": "Sweet2Adjacent",
             "questcode" : "Sw0;Sw0",
-            "range": "adjacent"
+            "range": "adjacent",
+            "reward": 2
         },
         {
             "name": "Fruit2Adjacent",
             "questcode" : "Fr0;Fr0",
-            "range": "adjacent"
+            "range": "adjacent",
+            "reward": 2
         }
     ]
 }

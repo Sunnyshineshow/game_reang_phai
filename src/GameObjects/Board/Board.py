@@ -32,8 +32,11 @@ class Board:
                 return False
             if direction_from == CheckDirectionFrom.LEFT:
                 for i in range(len(quest_field)):
+                    if self.board_field[i].type == CardType.NONE:
+                        return False
+
                     if (
-                        self.board_field[i] != quest_field[i]
+                        self.board_field[i].type != quest_field[i].type
                         and quest_field[i].type != CardType.ANY
                     ):
                         return False
@@ -45,10 +48,19 @@ class Board:
             else:
                 for i in range(len(quest_field)):
                     if (
-                        self.board_field[len(self.board_field) - i - 1]
-                        != quest_field[i]
+                        self.board_field[len(self.board_field) - i - 1].type
+                        == CardType.NONE
+                    ):
+                        return False
+
+                    if (
+                        self.board_field[len(self.board_field) - i - 1].type
+                        != quest_field[i].type
                         and quest_field[i].type != CardType.ANY
                     ):
+                        return False
+
+                    if self.board_field[len(self.board_field) - i - 1].is_in_combo:
                         return False
 
                 for i in range(len(quest_field)):
@@ -59,9 +71,9 @@ class Board:
             counted_arr = []
             for i in range(len(quest_field)):
                 for j in range(len(self.board_field)):
-                    if (
-                        self.board_field[j].type == quest_field[i].type
-                        or quest_field[i].type == CardType.ANY
+                    if self.board_field[j].type == quest_field[i].type or (
+                        quest_field[i].type == CardType.ANY
+                        and self.board_field[j].type != CardType.NONE
                     ):
                         if self.board_field[j].is_in_combo:
                             continue
