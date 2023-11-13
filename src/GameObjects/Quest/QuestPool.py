@@ -3,6 +3,7 @@ import random
 from src.GameObjects.Quest.Quest import Quest
 
 
+### Quest Checking is available in "src > GameObjects > Board > Board.py"
 class QuestPool:
     def __init__(self):
         self.quest_pool = []

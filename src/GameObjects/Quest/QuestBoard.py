@@ -1,6 +1,8 @@
 from src.GameObjects.Quest.QuestPool import QuestPool
+from src.GameObjects.Quest.Quest import Quest
 
 
+### Quest Checking is available in "src > GameObjects > Board > Board.py"
 class QuestBoard:
     def __init__(self):
         self.quest_board_field = []
@@ -17,8 +19,19 @@ class QuestBoard:
                 return
         self.quest_board_field.append(quest)
 
-    def add_quest_to_board(self, quest):
-        self.quest_board_field.append(quest)
+    def add_quest_to_board(self, raw_quest):
+        print(Quest(raw_quest))
+        self.quest_board_field.append(Quest(raw_quest))
 
     def remove_quest_from_board(self, quest):
         self.quest_board_field.remove(quest)
+
+    def get_board(self):
+        return self.quest_board_field
+
+    def view_quest_board(self):
+        _arr = []
+        for i in self.quest_board_field:
+            _arr.append(i.view_quest())
+
+        return _arr

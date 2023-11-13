@@ -11,3 +11,6 @@ class Hand:
 
     def view_hand(self):
         return self.hand_field
+
+    def clear_hand(self):
+        self.hand_field = []

@@ -5,6 +5,7 @@ from src.GameObjects.Card.CardAttribute.DrinkAttribute import DrinkAttribute
 from src.GameObjects.Card.CardAttribute.FoodAttribute import FoodAttribute
 from src.GameObjects.Card.CardAttribute.SweetAttribute import SweetAttribute
 from src.GameObjects.Card.CardAttribute.FruitAttribute import FruitAttribute
+from src.GameObjects.Card.CardAttribute.AnyAttribute import AnyAttribute
 
 """
 Summary:
@@ -22,7 +23,10 @@ Attribute number see CardAttribute in GameObject Section
 
 Range: 
 adjacent - near cards, bidirection
-overall - all card in the field
+all - all card in the field
+
+### Quest Checking is available in "src > GameObjects > Board > Board.py"
+
 """
 
 
@@ -33,7 +37,7 @@ class Quest:
         self.name = quest["name"]
         self.range = quest["range"].upper()
         self.condition = []
-        self.reward = []
+        self.reward = int(quest["reward"])
 
         # Render Area
         quest_code_overall = quest["questcode"].split(";")
@@ -58,6 +62,10 @@ class Quest:
                 card_type = CardType.SWEET
                 for attribute in SweetAttribute:
                     card_attribute_pool.append(attribute)
+            elif q[0:2] == "An":
+                card_type = CardType.ANY
+                for attribute in AnyAttribute:
+                    card_attribute_pool.append(attribute)
             else:
                 raise TypeError("Cannot render quest" + q["name"])
 
@@ -75,8 +83,8 @@ class Quest:
     def view_quest(self):
         card_outstr = ""
         for card in self.condition:
-            card_outstr += card.view_card + ";"
-        return self.name + " " + self.range + "\nCondition:" + card_outstr
+            card_outstr += str(card.view_card()) + ";"
+        return self.name + " " + self.range + " Condition:" + card_outstr
 
     def get_quest(self):
         return {

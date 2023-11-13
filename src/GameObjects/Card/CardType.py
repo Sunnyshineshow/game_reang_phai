@@ -7,3 +7,4 @@ class CardType(Enum):
     SWEET = 2
     DRINK = 3
     FRUIT = 4
+    ANY = 5
