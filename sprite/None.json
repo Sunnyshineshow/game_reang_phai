@@ -1,0 +1,15 @@
+{
+    "spriteSheetURL": "./graphics/none_sprite.png",
+    "size":[128,128],
+    "sprites":[
+        {
+            "name":"none_none",
+            "x":0,
+            "y":0,
+            "scalefactor":3,
+            "colorKey":-1
+        }
+    ]
+}
+
+
