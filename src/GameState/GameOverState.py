@@ -3,11 +3,10 @@ import pygame, sys
 from src.Utility.constants import *
 
 
-class MenuState(BaseState):
+class GameOverState(BaseState):
     def __init__(self, state_manager):
-        super(MenuState, self).__init__(state_manager)
+        super(GameOverState, self).__init__(state_manager)
         # start = 1,       ranking = 2
-        self.option = 1
 
         self.menu_change_sound = pygame.mixer.Sound("sounds/paddle_hit.wav")
         self.confirm_sound = pygame.mixer.Sound("sounds/confirm.wav")
@@ -30,23 +29,9 @@ class MenuState(BaseState):
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
                     sys.exit()
-                if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
-                    if self.option == 1:
-                        self.option = 2
-                    else:
-                        self.option = 1
-                    self.menu_change_sound.play()
                 if event.key == pygame.K_RETURN:
                     self.confirm_sound.play()
-
-                    if self.option == 1:
-                        # self.state_machine.Change(
-                        #     "start", {}
-                        # )
-                        pass
-                    else:
-                        pygame.quit()
-                        sys.exit()
+                    self.state_machine.Change("start", {})
 
     def render(self, screen):
         # title
