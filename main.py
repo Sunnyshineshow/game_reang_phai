@@ -2,8 +2,18 @@ from src.GameObjects.Card.CardDrawer import CardDrawer
 from src.GameObjects.Board.Board import Board
 from src.GameObjects.Hand.Hand import Hand
 from src.GameObjects.Quest.QuestPool import QuestPool
+from src.GameState.StateMachine import StateMachine
 
-print(QuestPool().random_quest())
+
+class MainGame:
+    def __init__(self):
+        self.g_state_manager = StateMachine(self.screen)
+        # Import the game state here
+        states = {}
+        self.g_state_manager.SetStates(states)
+
+
+# print(QuestPool().random_quest())
 
 # card_drawer = CardDrawer()
 # board = Board()
