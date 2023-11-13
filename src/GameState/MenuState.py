@@ -3,14 +3,14 @@ import pygame, sys
 from src.Utility.constants import *
 
 
-class StartState(BaseState):
+class MenuState(BaseState):
     def __init__(self, state_manager):
-        super(StartState, self).__init__(state_manager)
+        super(MenuState, self).__init__(state_manager)
         # start = 1,       ranking = 2
         self.option = 1
 
         self.menu_change_sound = pygame.mixer.Sound("sounds/paddle_hit.wav")
-        # self.confirm_sound = pygame.mixer.Sound("sounds/confirm.wav")
+        self.confirm_sound = pygame.mixer.Sound("sounds/confirm.wav")
         self.medium_font = pygame.font.Font("./fonts/font.ttf", 48)
         self.large_font = pygame.font.Font("./fonts/font.ttf", 96)
 
@@ -36,17 +36,17 @@ class StartState(BaseState):
                     else:
                         self.option = 1
                     self.menu_change_sound.play()
-                # if event.key == pygame.K_RETURN:
-                #     self.confirm_sound.play()
+                if event.key == pygame.K_RETURN:
+                    self.confirm_sound.play()
 
-                #     if self.option == 1:
-                #         self.state_machine.Change(
-                #             "paddle-select", {"high_scores": self.high_scores}
-                #         )
-                #     else:
-                #         self.state_machine.Change(
-                #             "high-scores", {"high_scores": self.high_scores}
-                #         )
+                    if self.option == 1:
+                        # self.state_machine.Change(
+                        #     "start", {}
+                        # )
+                        pass
+                    else:
+                        pygame.quit()
+                        sys.exit()
 
     def render(self, screen):
         # title
@@ -66,6 +66,6 @@ class StartState(BaseState):
         t_start = self.medium_font.render("START", False, t_start_color)
         rect = t_start.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 210))
         screen.blit(t_start, rect)
-        t_highscore = self.medium_font.render("HIGH SCORES", False, t_highscore_color)
+        t_highscore = self.medium_font.render("QUIT", False, t_highscore_color)
         rect = t_highscore.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 280))
         screen.blit(t_highscore, rect)
