@@ -10,6 +10,7 @@ class QuestBoard:
         self.pool = QuestPool()
 
         self.image = quest_image_list[0]
+        self.medium_font = pygame.font.Font("./fonts/font.ttf", 12)
 
     def add_new_quest_to_board(self):
         quest = self.pool.random_quest()
@@ -38,6 +39,18 @@ class QuestBoard:
             _arr.append(i.view_quest())
 
         return _arr
-    
+
     def render(self, screen):
-        screen.blit(self.image, (int(1000), int(100)))
+        counter = 0
+        for quest in self.quest_board_field:
+            con = quest.condition
+            strin = ""
+            for c in con:
+                strin += str(c.type)
+
+            t_start_color = (0, 0, 0)
+            t_start = self.medium_font.render(strin, False, t_start_color)
+            rect = t_start.get_rect(center=(1000, 100 + counter * 50))
+            screen.blit(t_start, rect)
+            counter += 1
+        # screen.blit(self.image, (int(1000), int(100)))
