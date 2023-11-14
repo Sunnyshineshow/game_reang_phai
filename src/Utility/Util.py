@@ -16,6 +16,7 @@ class SpriteManager:
                 "./sprite/Fruit.json",
                 "./sprite/Sweet.json",
                 "./sprite/None.json",
+                "./sprite/Heart.json",
             ]
         )
 

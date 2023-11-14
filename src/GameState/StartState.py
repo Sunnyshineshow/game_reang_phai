@@ -9,6 +9,7 @@ from src.Utility.CheckDirectionFrom import CheckDirectionFrom
 from src.GameState.StateMachine import StateMachine
 from src.GameState.BaseState import BaseState
 from src.Utility.constants import *
+from src.Utility.HeartRenderer import HeartRenderer as reshuffle
 import pygame
 
 
@@ -26,7 +27,7 @@ class StartState(BaseState):
         self.pool = QuestPool()
         self.quest_board = QuestBoard()
         self.quest_pool = self.pool.get_pool()
-        self.reshuffle_live = 3
+        self.reshuffle = reshuffle(3)
         self.log = ""
 
         # GAME STARTING
@@ -45,7 +46,7 @@ class StartState(BaseState):
                 "pool": self.pool,
                 "quest_board": self.quest_board,
                 "quest_pool": self.quest_pool,
-                "reshuffle_live": self.reshuffle_live,
+                "reshuffle": self.reshuffle,
                 "log": self.log,
             },
         )

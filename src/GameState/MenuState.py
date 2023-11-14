@@ -8,7 +8,6 @@ class MenuState(BaseState):
         super(MenuState, self).__init__(state_manager)
         # start = 1,       ranking = 2
         self.option = 1
-
         self.menu_change_sound = pygame.mixer.Sound("sounds/paddle_hit.wav")
         self.confirm_sound = pygame.mixer.Sound("sounds/confirm.wav")
         self.medium_font = pygame.font.Font("./fonts/font.ttf", 48)

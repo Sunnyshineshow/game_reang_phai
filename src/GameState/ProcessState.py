@@ -27,7 +27,7 @@ class ProcessState(BaseState):
         self.pool = params["pool"]
         self.quest_board = params["quest_board"]
         self.quest_pool = params["quest_pool"]
-        self.reshuffle_live = params["reshuffle_live"]
+        self.reshuffle = params["reshuffle"]
         self.log = params["log"]
         self.direction = 0
 
@@ -64,7 +64,7 @@ class ProcessState(BaseState):
                     "pool": self.pool,
                     "quest_board": self.quest_board,
                     "quest_pool": self.quest_pool,
-                    "reshuffle_live": self.reshuffle_live,
+                    "reshuffle": self.reshuffle,
                     "log": self.log,
                 },
             )
@@ -173,6 +173,7 @@ class ProcessState(BaseState):
         screen.fill(SCREEN_COLOR)
         self.board.render(screen)
         self.hand.render(screen)
+        self.reshuffle.render(screen, 0, 0)
 
         left_color = (255, 255, 255)
         right_color = (255, 255, 255)

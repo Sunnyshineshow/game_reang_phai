@@ -1,0 +1,22 @@
+{
+    "spriteSheetURL": "./graphics/heart.png",
+    "size":[128,128],
+    "sprites":[
+        {
+            "name":"heart_unfilled",
+            "x":0,
+            "y":0,
+            "scalefactor":0.5,
+            "colorKey":-1
+        },
+        {
+            "name":"heart_filled",
+            "x":128,
+            "y":0,
+            "scalefactor":0.5,
+            "colorKey":-1
+        }
+    ]
+}
+
+

@@ -78,3 +78,8 @@ fruit_image_list = [
 ]
 
 none_image_list = [sprite_collection["none_none"].image]
+
+heart_image_list = [
+    sprite_collection["heart_unfilled"].image,
+    sprite_collection["heart_filled"].image,
+]

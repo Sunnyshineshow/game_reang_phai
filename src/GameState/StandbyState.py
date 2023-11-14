@@ -28,7 +28,7 @@ class StandbyState(BaseState):
         self.pool = params["pool"]
         self.quest_board = params["quest_board"]
         self.quest_pool = params["quest_pool"]
-        self.reshuffle_live = params["reshuffle_live"]
+        self.reshuffle = params["reshuffle"]
         self.option = 0
         self.log = params["log"]
         self.hand.hand_selecting(self.option)
@@ -63,11 +63,25 @@ class StandbyState(BaseState):
                     self.board.shift_left()
 
                 # Reshuffle
+                if event.key == pygame.K_LCTRL:
+                    if self.reshuffle.get_level() <= 0:
+                        self.log = "You can no longer reshuffle"
+
+                    else:
+                        self.reshuffle.change_level(self.reshuffle.get_level() - 1)
+                        reshuffle_num = self.hand.count_hand()
+                        self.hand.clear_hand()
+                        for i in range(reshuffle_num):
+                            self.hand.add_card_to_hand(self.card_drawer.draw())
+
+                        self.log = "Reshuffle Remaining: " + str(
+                            self.reshuffle.get_level()
+                        )
 
                 if event.key == pygame.K_q:
                     self.state_machine.Change("gameover", {})
 
-                if event.key == pygame.K_SPACE:
+                if event.key == pygame.K_SPACE or event.key == pygame.K_RETURN:
                     self.state_machine.Change(
                         "direction",
                         {
@@ -77,7 +91,7 @@ class StandbyState(BaseState):
                             "pool": self.pool,
                             "quest_board": self.quest_board,
                             "quest_pool": self.quest_pool,
-                            "reshuffle_live": self.reshuffle_live,
+                            "reshuffle": self.reshuffle,
                             "log": "",
                         },
                     )
@@ -86,6 +100,7 @@ class StandbyState(BaseState):
         screen.fill(SCREEN_COLOR)
         self.board.render(screen)
         self.hand.render(screen)
+        self.reshuffle.render(screen, 0, 0)
         t_log = self.small_font.render(self.log, False, (255, 0, 0))
         rect_log = t_log.get_rect(center=(WIDTH / 2, HEIGHT / 4))
 

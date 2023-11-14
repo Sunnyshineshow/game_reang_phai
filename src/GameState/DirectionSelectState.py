@@ -27,7 +27,7 @@ class DirectionSelectState(BaseState):
         self.pool = params["pool"]
         self.quest_board = params["quest_board"]
         self.quest_pool = params["quest_pool"]
-        self.reshuffle_live = params["reshuffle_live"]
+        self.reshuffle = params["reshuffle"]
         self.direction = 0
         self.log = params["log"]
 
@@ -52,7 +52,22 @@ class DirectionSelectState(BaseState):
                 if event.key == pygame.K_d:
                     self.board.shift_left()
 
-                if event.key == pygame.K_SPACE:
+                if event.key == pygame.K_ESCAPE:
+                    self.state_machine.Change(
+                        "standby",
+                        {
+                            "card_drawer": self.card_drawer,
+                            "board": self.board,
+                            "hand": self.hand,
+                            "pool": self.pool,
+                            "quest_board": self.quest_board,
+                            "quest_pool": self.quest_pool,
+                            "reshuffle": self.reshuffle,
+                            "log": "",
+                        },
+                    )
+
+                if event.key == pygame.K_SPACE or event.key == pygame.K_RETURN:
                     if self.direction != 0:
                         card_trans = self.hand.remove_card_from_hand(
                             self.hand.view_hand()[self.hand.hand_selection]
@@ -71,7 +86,7 @@ class DirectionSelectState(BaseState):
                                         "pool": self.pool,
                                         "quest_board": self.quest_board,
                                         "quest_pool": self.quest_pool,
-                                        "reshuffle_live": self.reshuffle_live,
+                                        "reshuffle": self.reshuffle,
                                         "log": "Invalid Position, Try Again",
                                     },
                                 )
@@ -85,7 +100,7 @@ class DirectionSelectState(BaseState):
                                         "pool": self.pool,
                                         "quest_board": self.quest_board,
                                         "quest_pool": self.quest_pool,
-                                        "reshuffle_live": self.reshuffle_live,
+                                        "reshuffle": self.reshuffle,
                                         "log": self.log,
                                     },
                                 )
@@ -103,7 +118,7 @@ class DirectionSelectState(BaseState):
                                         "pool": self.pool,
                                         "quest_board": self.quest_board,
                                         "quest_pool": self.quest_pool,
-                                        "reshuffle_live": self.reshuffle_live,
+                                        "reshuffle": self.reshuffle,
                                         "log": "Invalid Position, Try Again",
                                     },
                                 )
@@ -117,7 +132,7 @@ class DirectionSelectState(BaseState):
                                         "pool": self.pool,
                                         "quest_board": self.quest_board,
                                         "quest_pool": self.quest_pool,
-                                        "reshuffle_live": self.reshuffle_live,
+                                        "reshuffle": self.reshuffle,
                                         "log": self.log,
                                     },
                                 )
@@ -126,6 +141,7 @@ class DirectionSelectState(BaseState):
         screen.fill(SCREEN_COLOR)
         self.board.render(screen)
         self.hand.render(screen)
+        self.reshuffle.render(screen, 0, 0)
 
         left_color = (255, 255, 255)
         right_color = (255, 255, 255)
