@@ -1,3 +1,4 @@
+from src.Utility.Dependency import *
 from src.GameObjects.Quest.QuestPool import QuestPool
 from src.GameObjects.Quest.Quest import Quest
 
@@ -7,6 +8,8 @@ class QuestBoard:
     def __init__(self):
         self.quest_board_field = []
         self.pool = QuestPool()
+
+        self.image = quest_image_list[0]
 
     def add_new_quest_to_board(self):
         quest = self.pool.random_quest()
@@ -35,3 +38,6 @@ class QuestBoard:
             _arr.append(i.view_quest())
 
         return _arr
+    
+    def render(self, screen):
+        screen.blit(self.image, (int(1000), int(100)))

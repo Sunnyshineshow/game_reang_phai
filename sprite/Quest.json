@@ -1,0 +1,13 @@
+{
+    "spriteSheetURL": "./graphics/sample_quest.png",
+    "size":[200,200],
+    "sprites":[
+        {
+            "name":"sample_quest",
+            "x":0,
+            "y":0,
+            "scalefactor":1,
+            "colorKey":-1
+        }
+    ]
+}

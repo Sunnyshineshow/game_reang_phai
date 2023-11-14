@@ -100,6 +100,7 @@ class StandbyState(BaseState):
         screen.fill(SCREEN_COLOR)
         self.board.render(screen)
         self.hand.render(screen)
+        self.quest_board.render(screen)
         self.reshuffle.render(screen, 0, 0)
         t_log = self.small_font.render(self.log, False, (255, 0, 0))
         rect_log = t_log.get_rect(center=(WIDTH / 2, HEIGHT / 4))
