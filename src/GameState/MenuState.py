@@ -40,10 +40,7 @@ class MenuState(BaseState):
                     self.confirm_sound.play()
 
                     if self.option == 1:
-                        # self.state_machine.Change(
-                        #     "start", {}
-                        # )
-                        pass
+                        self.state_machine.Change("start", {})
                     else:
                         pygame.quit()
                         sys.exit()

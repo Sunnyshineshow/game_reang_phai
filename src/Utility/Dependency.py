@@ -1,5 +1,5 @@
 import pygame
-from src.Util import SpriteManager
+from src.Utility.Util import SpriteManager
 
 sprite_collection = SpriteManager().spriteCollection
 

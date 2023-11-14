@@ -8,6 +8,11 @@ from src.GameObjects.Hand.Hand import Hand
 from src.GameObjects.Quest.QuestPool import QuestPool
 from src.GameState.StateMachine import StateMachine
 from src.GameState.MenuState import MenuState
+from src.GameState.StartState import StartState
+from src.GameState.StandbyState import StandbyState
+from src.GameState.DirectionSelectState import DirectionSelectState
+from src.GameState.ProcessState import ProcessState
+from src.GameState.GameOverState import GameOverState
 
 
 pygame.mixer.pre_init(44100, -16, 2, 4096)
@@ -35,6 +40,11 @@ class MainGame:
         # Import the game state here
         states = {
             "menu": MenuState(self.g_state_manager),
+            "start": StartState(self.g_state_manager),
+            "standby": StandbyState(self.g_state_manager),
+            "direction": DirectionSelectState(self.g_state_manager),
+            "process": ProcessState(self.g_state_manager),
+            "gameover": GameOverState(self.g_state_manager),
         }
         self.g_state_manager.SetStates(states)
 

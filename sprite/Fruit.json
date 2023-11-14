@@ -6,126 +6,126 @@
             "name":"fruit_grape",
             "x":0,
             "y":0,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
 	    {
             "name":"fruit_cherry",
             "x":128,
             "y":0,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_orange",
             "x":256,
             "y":0,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_pineapple",
             "x":384,
             "y":0,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_lemon",
             "x":512,
             "y":0,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_watermelon",
             "x":640,
             "y":0,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_strawberry",
             "x":768,
             "y":0,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_mango",
             "x":896,
             "y":0,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_berry",
             "x":0,
             "y":128,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_carrot",
             "x":128,
             "y":128,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_mangosteen",
             "x":256,
             "y":128,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_melon",
             "x":384,
             "y":128,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_dragonfruit",
             "x":512,
             "y":128,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_avocado",
             "x":640,
             "y":128,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_banana",
             "x":768,
             "y":128,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_peach",
             "x":896,
             "y":128,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_apple",
             "x":0,
             "y":256,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         },
         {
             "name":"fruit_rambutan",
             "x":384,
             "y":256,
-            "scalefactor":3,
+            "scalefactor":1,
             "colorKey":-1
         }
     ]

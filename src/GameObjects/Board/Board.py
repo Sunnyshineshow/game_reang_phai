@@ -4,6 +4,7 @@ from src.GameObjects.Card.Card import Card
 from src.GameObjects.Board.CardChecker import check_order
 from src.Utility.CheckDirectionFrom import CheckDirectionFrom
 from src.Utility.constants import *
+import pygame
 
 
 class Board:
@@ -35,6 +36,12 @@ class Board:
 
     def show_board(self):
         return self.board_field
+
+    def shift_left(self):
+        self.x -= 128
+
+    def shift_right(self):
+        self.x += 128
 
     def check_individual_quest(self, quest, direction_from):
         quest_field = quest.condition

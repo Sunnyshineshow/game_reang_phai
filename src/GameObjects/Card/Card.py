@@ -27,7 +27,7 @@ class Card:
             self.image = none_image_list[0]
 
     def render(self, screen, x, y):
-        screen.bilt(self.image, x, y)
+        screen.blit(self.image, (int(x), int(y)))
 
     def view_card(self):
         return "Card Type:", self.type, ", Card Attribute:", self.attribute
