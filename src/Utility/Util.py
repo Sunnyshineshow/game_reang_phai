@@ -17,6 +17,15 @@ class SpriteManager:
                 "./sprite/Sweet.json",
                 "./sprite/None.json",
                 "./sprite/Heart.json",
+                "./sprite/logo.json",
+                "./sprite/Start_button.json",
+                "./sprite/Exit_button.json",
+                "./sprite/main_menu_button.json",
+                "./sprite/retry_button.json",
+                "./sprite/tray.json",
+                "./sprite/arrows.json",
+                "./sprite/gameover.json",
+                "./sprite/gameover_bg.json",
                 "./sprite/Quest.json"
             ]
         )
@@ -59,6 +68,7 @@ class SpriteSheet(object):
             self.sheet = pygame.image.load(filename)
             self.sheet = pygame.image.load(filename)
             if not self.sheet.get_alpha():
+                self.sheet = self.sheet.convert_alpha()
                 self.sheet.set_colorkey((0, 0, 0))
         except pygame.error:
             print("Unable to load spritesheet image:", filename)
@@ -66,7 +76,9 @@ class SpriteSheet(object):
 
     def image_at(self, x, y, scalingfactor, colorkey=None, xTileSize=16, yTileSize=16):
         rect = pygame.Rect((x, y, xTileSize, yTileSize))
-        image = pygame.Surface(rect.size)
+
+        # Set SRCALPHA to support transparent
+        image = pygame.Surface(rect.size, pygame.SRCALPHA)
         image.blit(self.sheet, (0, 0), rect)
         if colorkey is not None:
             if colorkey == -1:

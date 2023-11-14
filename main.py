@@ -26,6 +26,7 @@ class MainGame:
     def __init__(self):
         self.max_frame_rate = 60
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+        self.surface = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
 
         self.bg_image = pygame.image.load("./graphics/background.png")
 

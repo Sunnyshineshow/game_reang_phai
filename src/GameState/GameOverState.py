@@ -1,6 +1,7 @@
 from src.GameState.BaseState import BaseState
 import pygame, sys
 from src.Utility.constants import *
+from src.Utility.Dependency import *
 
 
 class GameOverState(BaseState):
@@ -40,30 +41,34 @@ class GameOverState(BaseState):
                     self.confirm_sound.play()
 
                     if self.option == 1:
-                        self.state_machine.Change("menu", {})
+                        self.state_machine.Change("start", {})
                     else:
-                        pygame.quit()
-                        sys.exit()
+                        self.state_machine.Change("menu", {})
 
     def render(self, screen):
         # title
         screen.fill((0, 0, 0))
-        t_title = self.large_font.render("Game Over", False, (255, 0, 0))
-        rect = t_title.get_rect(center=(WIDTH / 2, HEIGHT / 3))
-        screen.blit(t_title, rect)
+        screen.blit(gameover_bg, (0, 0))
+        screen.blit(
+            gameover_logo, gameover_logo.get_rect(center=(WIDTH / 2, HEIGHT / 3))
+        )
 
-        t_start_color = (255, 255, 255)
-        t_highscore_color = (255, 255, 255)
+        retry_sprite = retry_image_list[0]
+        main_menu_sprite = main_menu_image_list[0]
 
         if self.option == 1:
-            t_start_color = (103, 255, 255)
+            retry_sprite = retry_image_list[1]
+            main_menu_sprite = main_menu_image_list[0]
 
         if self.option == 2:
-            t_highscore_color = (103, 255, 255)
+            retry_sprite = retry_image_list[0]
+            main_menu_sprite = main_menu_image_list[1]
 
-        t_start = self.medium_font.render("OK", False, t_start_color)
-        rect = t_start.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 210))
-        screen.blit(t_start, rect)
-        t_highscore = self.medium_font.render("QUIT", False, t_highscore_color)
-        rect = t_highscore.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 280))
-        screen.blit(t_highscore, rect)
+        screen.blit(
+            retry_sprite,
+            retry_sprite.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 90)),
+        )
+        screen.blit(
+            main_menu_sprite,
+            main_menu_sprite.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 230)),
+        )

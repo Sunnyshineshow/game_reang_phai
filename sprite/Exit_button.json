@@ -1,0 +1,22 @@
+{
+    "spriteSheetURL": "./graphics/exit_button.png",
+    "size":[512,512],
+    "sprites":[
+        {
+            "name":"exit_unselected",
+            "x":0,
+            "y":0,
+            "scalefactor":0.5,
+            "colorKey":-1
+        },
+        {
+            "name":"exit_selected",
+            "x":512,
+            "y":0,
+            "scalefactor":0.5,
+            "colorKey":-1
+        }
+    ]
+}
+
+

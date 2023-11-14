@@ -12,7 +12,7 @@ class Board:
         self.width = 128
         self.height = 128
         self.x = WIDTH / 2 - self.width / 2
-        self.y = HEIGHT / 2 - self.height / 2
+        self.y = HEIGHT / 3 - self.height / 2
         self.dx = 0
         self.dy = 0
         self.rect = pygame.Rect(self.x, self.y, self.width, self.height)

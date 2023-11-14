@@ -1,5 +1,6 @@
 from src.Utility.constants import *
 import pygame
+from src.Utility.Dependency import tray_image
 
 
 class Hand:
@@ -37,8 +38,9 @@ class Hand:
         return len(self.hand_field)
 
     def render(self, screen):
+        screen.blit(tray_image, (0, HEIGHT / 6))
         for i in range(len(self.hand_field)):
             if i == self.hand_selection:
-                self.hand_field[i].render(screen, 0 + i * 128, 475)
+                self.hand_field[i].render(screen, 50 + i * 128, 500)
             else:
-                self.hand_field[i].render(screen, 0 + i * 128, 550)
+                self.hand_field[i].render(screen, 50 + i * 128, 550)

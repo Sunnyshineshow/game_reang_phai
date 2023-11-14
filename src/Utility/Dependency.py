@@ -87,3 +87,37 @@ heart_image_list = [
     sprite_collection["heart_unfilled"].image,
     sprite_collection["heart_filled"].image,
 ]
+
+logo = sprite_collection["logo"].image
+
+start_image_list = [
+    sprite_collection["start_unselected"].image,
+    sprite_collection["start_selected"].image,
+]
+
+exit_image_list = [
+    sprite_collection["exit_unselected"].image,
+    sprite_collection["exit_selected"].image,
+]
+
+retry_image_list = [
+    sprite_collection["retry_unselected"].image,
+    sprite_collection["retry_selected"].image,
+]
+
+main_menu_image_list = [
+    sprite_collection["main_menu_unselected"].image,
+    sprite_collection["main_menu_selected"].image,
+]
+
+tray_image = sprite_collection["tray"].image
+
+arrows_image_list = [
+    sprite_collection["arrow_left_unselected"].image,
+    sprite_collection["arrow_left_selected"].image,
+    sprite_collection["arrow_right_unselected"].image,
+    sprite_collection["arrow_right_selected"].image,
+]
+
+gameover_logo = sprite_collection["gameover"].image
+gameover_bg = sprite_collection["gameover_bg"].image
