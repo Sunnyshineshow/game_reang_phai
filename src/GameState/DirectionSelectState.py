@@ -143,18 +143,17 @@ class DirectionSelectState(BaseState):
         self.hand.render(screen)
         self.reshuffle.render(screen, 0, 0)
 
-        left_color = (255, 255, 255)
-        right_color = (255, 255, 255)
+        left_arrow = arrows_image_list[0]
+        right_arrow = arrows_image_list[2]
 
         if self.direction == 1:
-            left_color = (0, 255, 255)
+            left_arrow = arrows_image_list[1]
+            right_arrow = arrows_image_list[2]
         elif self.direction == 2:
-            right_color = (0, 255, 255)
+            left_arrow = arrows_image_list[0]
+            right_arrow = arrows_image_list[3]
 
-        t_left = self.large_font.render("LEFT", False, left_color)
-        rect_left = t_left.get_rect(center=(WIDTH / 4, HEIGHT / 3))
-
-        t_right = self.large_font.render("RIGHT", False, right_color)
-        rect_right = t_right.get_rect(center=(WIDTH / 4 * 3, HEIGHT / 3))
-        screen.blit(t_left, rect_left)
-        screen.blit(t_right, rect_right)
+        screen.blit(left_arrow, left_arrow.get_rect(center=(WIDTH / 4, HEIGHT / 2)))
+        screen.blit(
+            right_arrow, right_arrow.get_rect(center=(WIDTH / 4 * 3, HEIGHT / 2))
+        )

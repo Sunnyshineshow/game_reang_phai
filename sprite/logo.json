@@ -1,0 +1,15 @@
+{
+    "spriteSheetURL": "./graphics/logo.png",
+    "size":[1261,751],
+    "sprites":[
+        {
+            "name":"logo",
+            "x":0,
+            "y":0,
+            "scalefactor":0.5,
+            "colorKey":-1
+        }
+    ]
+}
+
+
