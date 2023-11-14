@@ -42,6 +42,7 @@ class QuestBoard:
 
     def render(self, screen):
         counter = 0
+        screen.blit(self.image, (int(1000), int(100)))
         for quest in self.quest_board_field:
             con = quest.condition
             strin = ""
@@ -53,4 +54,3 @@ class QuestBoard:
             rect = t_start.get_rect(center=(1000, 100 + counter * 50))
             screen.blit(t_start, rect)
             counter += 1
-        # screen.blit(self.image, (int(1000), int(100)))
