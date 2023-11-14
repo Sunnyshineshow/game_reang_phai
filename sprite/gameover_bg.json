@@ -1,0 +1,15 @@
+{
+    "spriteSheetURL": "./graphics/gameoverbg.png",
+    "size":[1280,720],
+    "sprites":[
+        {
+            "name":"gameover_bg",
+            "x":0,
+            "y":0,
+            "scalefactor":1,
+            "colorKey":-1
+        }
+    ]
+}
+
+

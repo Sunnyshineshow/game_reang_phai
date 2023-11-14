@@ -24,6 +24,8 @@ class SpriteManager:
                 "./sprite/retry_button.json",
                 "./sprite/tray.json",
                 "./sprite/arrows.json",
+                "./sprite/gameover.json",
+                "./sprite/gameover_bg.json",
             ]
         )
 

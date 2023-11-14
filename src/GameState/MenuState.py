@@ -67,9 +67,9 @@ class MenuState(BaseState):
 
         screen.blit(
             start_sprite,
-            start_sprite.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 210)),
+            start_sprite.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 120)),
         )
         screen.blit(
             exit_sprite,
-            exit_sprite.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 280)),
+            exit_sprite.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 190)),
         )

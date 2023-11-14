@@ -6,14 +6,14 @@
             "name":"main_menu_unselected",
             "x":0,
             "y":0,
-            "scalefactor":0.5,
+            "scalefactor":1,
             "colorKey":0
         },
         {
             "name":"main_menu_selected",
             "x":512,
             "y":0,
-            "scalefactor":0.5,
+            "scalefactor":1,
             "colorKey":0
         }
     ]

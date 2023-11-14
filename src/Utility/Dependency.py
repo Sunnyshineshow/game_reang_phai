@@ -114,3 +114,6 @@ arrows_image_list = [
     sprite_collection["arrow_right_unselected"].image,
     sprite_collection["arrow_right_selected"].image,
 ]
+
+gameover_logo = sprite_collection["gameover"].image
+gameover_bg = sprite_collection["gameover_bg"].image

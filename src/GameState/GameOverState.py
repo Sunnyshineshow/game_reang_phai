@@ -48,9 +48,10 @@ class GameOverState(BaseState):
     def render(self, screen):
         # title
         screen.fill((0, 0, 0))
-        t_title = self.large_font.render("Game Over", False, (255, 0, 0))
-        rect = t_title.get_rect(center=(WIDTH / 2, HEIGHT / 3))
-        screen.blit(t_title, rect)
+        screen.blit(gameover_bg, (0, 0))
+        screen.blit(
+            gameover_logo, gameover_logo.get_rect(center=(WIDTH / 2, HEIGHT / 3))
+        )
 
         retry_sprite = retry_image_list[0]
         main_menu_sprite = main_menu_image_list[0]
@@ -65,9 +66,9 @@ class GameOverState(BaseState):
 
         screen.blit(
             retry_sprite,
-            retry_sprite.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 210)),
+            retry_sprite.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 90)),
         )
         screen.blit(
             main_menu_sprite,
-            main_menu_sprite.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 280)),
+            main_menu_sprite.get_rect(center=(WIDTH / 2, HEIGHT / 2 + 230)),
         )
