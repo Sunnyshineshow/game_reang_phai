@@ -3,6 +3,10 @@ from src.Utility.Util import SpriteManager
 
 sprite_collection = SpriteManager().spriteCollection
 
+quest_image_list = [
+    sprite_collection["sample_quest"].image
+]
+
 food_image_list = [
     sprite_collection["food_maki"].image,
     sprite_collection["food_omurice"].image,
