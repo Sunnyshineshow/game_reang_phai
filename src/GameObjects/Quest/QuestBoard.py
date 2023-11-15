@@ -6,6 +6,8 @@ from src.GameObjects.Quest.Quest import Quest
 ### Quest Checking is available in "src > GameObjects > Board > Board.py"
 class QuestBoard:
     def __init__(self):
+        self.x = 1080
+        self.y = 10
         self.quest_board_field = []
         self.pool = QuestPool()
 
@@ -42,15 +44,15 @@ class QuestBoard:
 
     def render(self, screen):
         counter = 0
+        screen.blit(self.image, (self.x, self.y))
         for quest in self.quest_board_field:
             con = quest.condition
             strin = ""
             for c in con:
-                strin += str(c.type)
+                strin += str(c.type)[9:] + " "
 
             t_start_color = (0, 0, 0)
             t_start = self.medium_font.render(strin, False, t_start_color)
-            rect = t_start.get_rect(center=(1000, 100 + counter * 50))
+            rect = t_start.get_rect(center=(self.x + 100, self.y + 50 + counter * 50))
             screen.blit(t_start, rect)
             counter += 1
-        # screen.blit(self.image, (int(1000), int(100)))
