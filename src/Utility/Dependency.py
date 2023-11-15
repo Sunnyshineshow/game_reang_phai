@@ -3,9 +3,7 @@ from src.Utility.Util import SpriteManager
 
 sprite_collection = SpriteManager().spriteCollection
 
-quest_image_list = [
-    sprite_collection["sample_quest"].image
-]
+quest_image_list = [sprite_collection["sample_quest"].image]
 
 food_image_list = [
     sprite_collection["food_maki"].image,
@@ -121,3 +119,11 @@ arrows_image_list = [
 
 gameover_logo = sprite_collection["gameover"].image
 gameover_bg = sprite_collection["gameover_bg"].image
+
+discs_image_list = [
+    sprite_collection["disc_food"].image,
+    sprite_collection["disc_sweet"].image,
+    sprite_collection["disc_drink"].image,
+    sprite_collection["disc_fruit"].image,
+    sprite_collection["disc_none"].image,
+]

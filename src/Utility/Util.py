@@ -26,7 +26,8 @@ class SpriteManager:
                 "./sprite/arrows.json",
                 "./sprite/gameover.json",
                 "./sprite/gameover_bg.json",
-                "./sprite/Quest.json"
+                "./sprite/Quest.json",
+                "./sprite/discs.json",
             ]
         )
 
